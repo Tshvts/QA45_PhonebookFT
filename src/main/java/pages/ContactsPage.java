@@ -18,6 +18,9 @@ public class ContactsPage extends BasePage
     @FindBy(xpath = "//button[text()='Sign Out']")
     WebElement btnSignOut;
 
+    @FindBy(xpath = "//a[text()='ADD']")
+    WebElement btnAdd;
+
     public void clickBtnSignOut()
     {
         pause(3);
@@ -28,5 +31,11 @@ public class ContactsPage extends BasePage
     {
         pause(2);
         return btnSignOut.isDisplayed();
+    }
+
+    public void clickBtnAdd()
+    {
+        btnAdd.click();
+        pause(2);
     }
 }

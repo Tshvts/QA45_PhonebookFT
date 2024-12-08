@@ -1,11 +1,17 @@
 package pages;
 
 import dto.UserDto;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+
+import java.time.Duration;
 
 public class LoginPage extends BasePage
 {
@@ -28,6 +34,12 @@ public class LoginPage extends BasePage
     @FindBy(xpath = "//button[text()='Registration']")
     WebElement btnRegister;
 
+    @FindBy(xpath = "//div[text()='Login Failed with code 401']")
+    WebElement errorMessage;
+
+    @FindBy(xpath = "//div[text()='Registration failed with code 400']")
+    WebElement errorMessageRegis;
+
     public void typeLoginForm(UserDto user)
     {
         inputEmail.sendKeys(user.getEmail());
@@ -49,5 +61,22 @@ public class LoginPage extends BasePage
         btnRegister.click();
 
         pause(2);
+    }
+
+    public void closeAlert()
+    {
+        Alert alert = new WebDriverWait(driver, Duration.ofSeconds(5))
+                .until(ExpectedConditions.alertIsPresent());
+        alert.accept();
+    }
+
+    public boolean validateErrorMessage(String text)
+    {
+         return isElementContainsText(errorMessageRegis, text);
+    }
+
+    public boolean validateErrorMessageLog(String text)
+    {
+         return isElementContainsText(errorMessage, text);
     }
 }

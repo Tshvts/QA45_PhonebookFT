@@ -25,4 +25,10 @@ public class BasePage
         }
     }
 
+    public boolean isElementContainsText(WebElement element, String text)
+    {
+        return element.getText().contains(text);
+    }
 }
+
+
