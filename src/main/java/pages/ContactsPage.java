@@ -23,19 +23,16 @@ public class ContactsPage extends BasePage
 
     public void clickBtnSignOut()
     {
-        pause(3);
         btnSignOut.click();
     }
 
     public boolean isSignOutPresent()
     {
-        pause(2);
         return btnSignOut.isDisplayed();
     }
 
     public void clickBtnAdd()
     {
         btnAdd.click();
-        pause(2);
     }
 }

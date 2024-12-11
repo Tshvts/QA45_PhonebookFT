@@ -45,10 +45,7 @@ public class LoginPage extends BasePage
         inputEmail.sendKeys(user.getEmail());
         inputPwd.sendKeys(user.getPassword());
 
-        pause(2);
-
         btnLogin.click();
-        pause(2);
     }
 
     public void typeRegistrationForm(String email, String password)
@@ -56,11 +53,7 @@ public class LoginPage extends BasePage
         inputEmail.sendKeys(email);
         inputPwd.sendKeys(password);
 
-        pause(2);
-
         btnRegister.click();
-
-        pause(2);
     }
 
     public void closeAlert()

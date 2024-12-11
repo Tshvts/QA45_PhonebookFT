@@ -2,11 +2,16 @@ package pages;
 
 import dto.ContactDtoLombok;
 import dto.UserDto;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class AddContactPage extends BasePage
 {
@@ -38,8 +43,11 @@ public class AddContactPage extends BasePage
     @FindBy(xpath = "//b[text()='Save']")
     WebElement btnSave;
 
-    @FindBy(xpath = "//div[@class='contact-item_card__2SOIM']")
-    WebElement createdContact;
+    @FindBy(xpath = "//div[@class='contact-page_leftdiv__yhyke']/div/div[last()]")
+    WebElement lastElementContactList;
+
+    @FindBy(xpath = "//div[@class='add_main__1tbl_']")
+    WebElement addContactForm;
 
     public void typeContactForm(ContactDtoLombok contact)
     {
@@ -49,19 +57,27 @@ public class AddContactPage extends BasePage
         fieldEmail.sendKeys(contact.getEmail());
         fieldAddress.sendKeys(contact.getAddress());
         fieldDescription.sendKeys(contact.getDescription());
-        pause(2);
     }
 
     public void clickBtnSave()
     {
         btnSave.click();
-        pause(2);
     }
 
-    public boolean isContactExisted(String text)
+    public boolean validateLastElementContactList(ContactDtoLombok contact)
     {
-        return isElementContainsText(createdContact,text);
+        return lastElementContactList.getText().contains(contact.getName());
     }
 
+    public boolean validateAddContactFormIsDisplayed()
+    {
+        return addContactForm.isDisplayed();
+    }
 
+    public void closeAlert()
+    {
+        Alert alert = new WebDriverWait(driver, Duration.ofSeconds(5))
+                .until(ExpectedConditions.alertIsPresent());
+        alert.accept();
+    }
 }
