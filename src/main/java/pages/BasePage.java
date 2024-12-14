@@ -38,6 +38,15 @@ public class BasePage
     {
         new WebDriverWait(driver, Duration.ofSeconds(time)).until(ExpectedConditions.elementToBeClickable(element)).click();
     }
+
+    public void pause(int time)
+    {
+        try {
+            Thread.sleep(time* 1000L);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
 
 

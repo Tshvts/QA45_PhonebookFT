@@ -30,7 +30,7 @@ public class CreatingContactsTests extends ApplicationManager
         contactsPage.clickBtnAdd();
     }
 
-    @Test
+    @Test(invocationCount = 1)
     public void createContactPositiveTest()
     {
         int i = new Random().nextInt(100, 999);
