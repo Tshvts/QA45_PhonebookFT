@@ -1,5 +1,6 @@
 package pages;
 
+import dto.ContactDtoLombok;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -32,6 +33,30 @@ public class ContactsPage extends BasePage
     @FindBy(xpath = "//button[text()='Remove']")
     WebElement btnRemove;
 
+    @FindBy(xpath = "//button[text()='Edit']")
+    WebElement btnEdit;
+
+    @FindBy(xpath = "//input[@placeholder='Name']")
+    WebElement fieldName;
+
+    @FindBy(xpath = "//input[@placeholder='Last Name']")
+    WebElement fieldLastName;
+
+    @FindBy(xpath = "//input[@placeholder='Phone']")
+    WebElement fieldPhone;
+
+    @FindBy(xpath = "//input[@placeholder='email']")
+    WebElement fieldEmail;
+
+    @FindBy(xpath = "//input[@placeholder='Address']")
+    WebElement fieldAddress;
+
+    @FindBy(xpath = "//button[text()='Save']")
+    WebElement btnSave;
+
+    @FindBy(xpath = "//div[@class='contact-item-detailed_card__50dTS']")
+    WebElement contactCard;
+
     public void clickBtnSignOut()
     {
         clickWait(btnSignOut, 5);
@@ -57,5 +82,45 @@ public class ContactsPage extends BasePage
     public int quantityContacts()
     {
         return new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@class='contact-item_card__2SOIM']"))).size();
+    }
+
+    //HOMEWORK 11
+
+    public void editFirstContact(ContactDtoLombok contact)
+    {
+        clickWait(firstContact,3);
+        clickWait(btnEdit,3);
+        pause(3);
+
+        fieldName.clear();
+        fieldName.sendKeys(contact.getName());
+
+        fieldLastName.clear();
+        fieldLastName.sendKeys(contact.getLastName());
+
+        fieldPhone.clear();
+        fieldPhone.sendKeys(contact.getPhone());
+
+        fieldEmail.clear();
+        fieldEmail.sendKeys(contact.getEmail());
+
+        fieldAddress.clear();
+        fieldAddress.sendKeys(contact.getAddress());
+    }
+
+    public void clickBtnSave()
+    {
+        clickWait(btnSave, 5);
+    }
+
+    public boolean contactCardIsDisplayed()
+    {
+        return contactCard.isDisplayed();
+    }
+
+    public boolean validateChangesInContact(String text)
+    {
+        pause(3);
+       return isElementContainsText(contactCard, text);
     }
 }
