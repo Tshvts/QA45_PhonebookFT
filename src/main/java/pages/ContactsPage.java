@@ -23,7 +23,7 @@ public class ContactsPage extends BasePage
 
     public void clickBtnSignOut()
     {
-        btnSignOut.click();
+        clickWait(btnSignOut, 5);
     }
 
     public boolean isSignOutPresent()
