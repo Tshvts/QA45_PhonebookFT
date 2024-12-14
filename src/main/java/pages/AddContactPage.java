@@ -74,10 +74,17 @@ public class AddContactPage extends BasePage
         return addContactForm.isDisplayed();
     }
 
-    public void closeAlert()
+    public String closeAlert()
     {
         Alert alert = new WebDriverWait(driver, Duration.ofSeconds(5))
                 .until(ExpectedConditions.alertIsPresent());
+        String text = alert.getText();
         alert.accept();
+        return text;
+    }
+
+    public boolean validateUrlContacts()
+    {
+        return validateUrl("contacts", 5);
     }
 }

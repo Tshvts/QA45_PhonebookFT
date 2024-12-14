@@ -6,6 +6,7 @@ import manager.ApplicationManager;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import pages.AddContactPage;
 import pages.ContactsPage;
 import pages.HomePage;
@@ -15,6 +16,7 @@ import java.util.Random;
 
 public class CreatingContactsTests extends ApplicationManager
 {
+    SoftAssert softAssert = new SoftAssert();
     ContactsPage contactsPage;
     AddContactPage addContactPage;
 
@@ -60,7 +62,7 @@ public class CreatingContactsTests extends ApplicationManager
                 .build();
         addContactPage.typeContactForm(contact);
         addContactPage.clickBtnSave();
-        Assert.assertTrue(addContactPage.validateAddContactFormIsDisplayed());
+        Assert.assertFalse(addContactPage.validateUrlContacts());
     }
 
     @Test
@@ -94,8 +96,12 @@ public class CreatingContactsTests extends ApplicationManager
                 .build();
         addContactPage.typeContactForm(contact);
         addContactPage.clickBtnSave();
-        addContactPage.closeAlert();
-        Assert.assertTrue(addContactPage.validateAddContactFormIsDisplayed());
+        String message = addContactPage.closeAlert();
+        System.out.println(message);
+        softAssert.assertTrue(message.contains("Phone number must contain only digits!"));
+        System.out.println("code after assert");
+        softAssert.assertTrue(addContactPage.validateAddContactFormIsDisplayed());
+        softAssert.assertAll();
     }
 
     @Test
