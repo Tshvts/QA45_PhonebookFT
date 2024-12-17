@@ -3,6 +3,7 @@ package tests;
 import dto.ContactDtoLombok;
 import dto.UserDto;
 import manager.ApplicationManager;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -11,6 +12,7 @@ import pages.HomePage;
 import pages.LoginPage;
 
 import java.util.Random;
+import static utils.RandomUtils.*;
 
 public class EditContact extends ApplicationManager
 {
@@ -28,19 +30,20 @@ public class EditContact extends ApplicationManager
     @Test
     public void editContactPositiveTest()
     {
-        int i = new Random().nextInt(100, 999);
         ContactDtoLombok contact = ContactDtoLombok.builder()
-                .name("Sasha" + i)
-                .lastName("Ivanova" + i)
-                .phone("0504232" + i)
-                .email(i + "_ivanova56@gmail.com")
-                .address("Tel Aviv, Herzl, 15-" + i)
+                .name(generateString(5))
+                .lastName(generateString(10))
+                .phone(generatePhone(10))
+                .email(generateEmail(7))
+                .address("Tel Aviv, Herzl," + generatePhone(2))
                 .description("Eng") //field is a bug. I can't edit this field
                 .build();
         contactsPage.editFirstContact(contact);
         contactsPage.clickBtnSave();
-        softAssert.assertTrue(contactsPage.contactCardIsDisplayed());
-        softAssert.assertTrue(contactsPage.validateChangesInContact("Sasha" + i));
-        softAssert.assertAll();
+//        softAssert.assertTrue(contactsPage.contactCardIsDisplayed());
+//        softAssert.assertTrue(contactsPage.validateChangesInContact(generateString(5)));
+//        softAssert.assertAll();
+        contactsPage.validateContactCard(contact);
+        softAssert.assertTrue(contactsPage.validateContactCard(contact));
     }
 }

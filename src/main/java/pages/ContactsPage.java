@@ -113,14 +113,27 @@ public class ContactsPage extends BasePage
         clickWait(btnSave, 5);
     }
 
-    public boolean contactCardIsDisplayed()
-    {
-        return contactCard.isDisplayed();
-    }
+////    public boolean contactCardIsDisplayed()
+//     {
+////        return contactCard.isDisplayed();
+////    }
+////
+////    public boolean validateChangesInContact(String text)
+////    {
+////        pause(3);
+////       return isElementContainsText(contactCard, text);
+//// }
 
-    public boolean validateChangesInContact(String text)
+    public boolean validateContactCard(ContactDtoLombok contact)
     {
-        pause(3);
-       return isElementContainsText(contactCard, text);
+         System.out.println("old contact:" + contactCard.getText());
+         new WebDriverWait(driver,Duration.ofSeconds(5)).until(ExpectedConditions.textToBePresentInElement(contactCard,contact.getName()));
+        System.out.println("new contact:" + contactCard.getText());
+        String cardContactText = contactCard.getText();
+         return (cardContactText.contains(contact.getName())
+                 && cardContactText.contains(contact.getLastName())
+                 && cardContactText.contains(contact.getPhone())
+                 && cardContactText.contains(contact.getEmail())
+                 && cardContactText.contains(contact.getAddress()));
     }
 }
