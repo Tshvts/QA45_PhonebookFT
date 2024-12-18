@@ -1,5 +1,6 @@
 package tests;
 
+import data_provider.DPContact;
 import dto.ContactDtoLombok;
 import dto.UserDto;
 import manager.ApplicationManager;
@@ -40,10 +41,15 @@ public class EditContact extends ApplicationManager
                 .build();
         contactsPage.editFirstContact(contact);
         contactsPage.clickBtnSave();
-//        softAssert.assertTrue(contactsPage.contactCardIsDisplayed());
-//        softAssert.assertTrue(contactsPage.validateChangesInContact(generateString(5)));
-//        softAssert.assertAll();
         contactsPage.validateContactCard(contact);
+        softAssert.assertTrue(contactsPage.validateContactCard(contact));
+    }
+
+    @Test(dataProvider = "newContactDP", dataProviderClass = DPContact.class)
+    public void editContactTestDP(ContactDtoLombok contact)
+    {
+        contactsPage.editFirstContact(contact);
+        contactsPage.clickBtnSave();
         softAssert.assertTrue(contactsPage.validateContactCard(contact));
     }
 }

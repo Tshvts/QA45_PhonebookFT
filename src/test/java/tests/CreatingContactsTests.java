@@ -1,5 +1,7 @@
 package tests;
 
+import data_provider.DPAddContact;
+import data_provider.DPContact;
 import dto.ContactDtoLombok;
 import dto.UserDto;
 import manager.ApplicationManager;
@@ -12,6 +14,7 @@ import pages.ContactsPage;
 import pages.HomePage;
 import pages.LoginPage;
 
+import static utils.RandomUtils.*;
 import java.util.Random;
 
 public class CreatingContactsTests extends ApplicationManager
@@ -99,7 +102,6 @@ public class CreatingContactsTests extends ApplicationManager
         String message = addContactPage.closeAlert();
         System.out.println(message);
         softAssert.assertTrue(message.contains("Phone number must contain only digits!"));
-        System.out.println("code after assert");
         softAssert.assertTrue(addContactPage.validateAddContactFormIsDisplayed());
         softAssert.assertAll();
     }
@@ -134,6 +136,62 @@ public class CreatingContactsTests extends ApplicationManager
                 .address("")
                 .description("English teacher")
                 .build();
+        addContactPage.typeContactForm(contact);
+        addContactPage.clickBtnSave();
+        Assert.assertTrue(addContactPage.validateAddContactFormIsDisplayed());
+    }
+
+
+    //HW 12
+
+    @Test(dataProvider = "addContactPositive", dataProviderClass = DPAddContact.class)
+    public void addContactPositiveTestDP(ContactDtoLombok contact)
+    {
+        addContactPage.typeContactForm(contact);
+        addContactPage.clickBtnSave();
+        Assert.assertTrue(addContactPage.validateLastElementContactList(contact));
+    }
+
+    @Test(dataProvider = "addContactNegative_EmptyName", dataProviderClass = DPAddContact.class)
+    public void addContactNegativeTestDP_EmptyName(ContactDtoLombok contact)
+    {
+        addContactPage.typeContactForm(contact);
+        addContactPage.clickBtnSave();
+        Assert.assertFalse(addContactPage.validateUrlContacts());
+    }
+
+    @Test(dataProvider = "addContactNegative_EmptyLastName", dataProviderClass = DPAddContact.class)
+    public void addContactNegativeTestDP_EmptyLastName(ContactDtoLombok contact)
+    {
+        addContactPage.typeContactForm(contact);
+        addContactPage.clickBtnSave();
+        Assert.assertTrue(addContactPage.validateAddContactFormIsDisplayed());
+    }
+
+    @Test(dataProvider = "addContactNegative_WrongPhone", dataProviderClass = DPAddContact.class)
+    public void addContactNegativeTestDP_WrongPhone(ContactDtoLombok contact)
+    {
+        addContactPage.typeContactForm(contact);
+        addContactPage.clickBtnSave();
+        String message = addContactPage.closeAlert();
+        System.out.println(message);
+        softAssert.assertTrue(message.contains("Phone number must contain only digits!"));
+        softAssert.assertTrue(addContactPage.validateAddContactFormIsDisplayed());
+        softAssert.assertAll();
+    }
+
+    @Test(dataProvider = "addContactNegative_WrongEmail", dataProviderClass = DPAddContact.class)
+    public void addContactNegativeTestDP_WrongEmail(ContactDtoLombok contact)
+    {
+        addContactPage.typeContactForm(contact);
+        addContactPage.clickBtnSave();
+        addContactPage.closeAlert();
+        Assert.assertTrue(addContactPage.validateAddContactFormIsDisplayed());
+    }
+
+    @Test(dataProvider = "addContactNegative_EmptyAddress", dataProviderClass = DPAddContact.class)
+    public void addContactNegativeTestDP_EmptyAddress(ContactDtoLombok contact)
+    {
         addContactPage.typeContactForm(contact);
         addContactPage.clickBtnSave();
         Assert.assertTrue(addContactPage.validateAddContactFormIsDisplayed());

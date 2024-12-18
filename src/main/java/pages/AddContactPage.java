@@ -56,7 +56,7 @@ public class AddContactPage extends BasePage
         fieldPhone.sendKeys(contact.getPhone());
         fieldEmail.sendKeys(contact.getEmail());
         fieldAddress.sendKeys(contact.getAddress());
-        fieldDescription.sendKeys(contact.getDescription());
+        //fieldDescription.sendKeys(contact.getDescription());
     }
 
     public void clickBtnSave()
