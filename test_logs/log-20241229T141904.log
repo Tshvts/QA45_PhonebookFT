@@ -1,0 +1,3 @@
+14:19:04.415 [Test worker] INFO  manager.ApplicationManager - Start testing-->createContactPositiveTest
+14:19:10.920 [Test worker] INFO  manager.ApplicationManager - Test: createContactPositiveTest
+14:19:12.212 [Test worker] INFO  manager.ApplicationManager - Stop testing-->createContactPositiveTest

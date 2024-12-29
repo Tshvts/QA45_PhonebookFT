@@ -36,6 +36,7 @@ public class CreatingContactsTests extends ApplicationManager
     @Test(invocationCount = 1)
     public void createContactPositiveTest()
     {
+        logger.info("Test: createContactPositiveTest");
         int i = new Random().nextInt(100, 999);
         ContactDtoLombok contact = ContactDtoLombok.builder()
                 .name("Anya_" + i)
