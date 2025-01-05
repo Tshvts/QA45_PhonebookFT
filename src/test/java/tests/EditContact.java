@@ -4,16 +4,18 @@ import data_provider.DPContact;
 import dto.ContactDtoLombok;
 import dto.UserDto;
 import manager.ApplicationManager;
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.ContactsPage;
 import pages.HomePage;
 import pages.LoginPage;
+import utils.TestNGListener;
 
-import java.util.Random;
 import static utils.RandomUtils.*;
+
+@Listeners(TestNGListener.class)
 
 public class EditContact extends ApplicationManager
 {
@@ -23,9 +25,9 @@ public class EditContact extends ApplicationManager
     @BeforeMethod
     public void login()
     {
-        new HomePage(getDriver()).clickBtnLoginHeader();
-        new LoginPage(getDriver()).typeLoginForm(new UserDto("shevt2827@gmail.com", "Password123!"));
-        contactsPage = new ContactsPage(getDriver());
+        new HomePage(getWebDriver()).clickBtnLoginHeader();
+        new LoginPage(getWebDriver()).typeLoginForm(new UserDto("shevt2827@gmail.com", "Password123!"));
+        contactsPage = new ContactsPage(getWebDriver());
     }
 
     @Test

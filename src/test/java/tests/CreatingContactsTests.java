@@ -1,21 +1,23 @@
 package tests;
 
 import data_provider.DPAddContact;
-import data_provider.DPContact;
 import dto.ContactDtoLombok;
 import dto.UserDto;
 import manager.ApplicationManager;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.AddContactPage;
 import pages.ContactsPage;
 import pages.HomePage;
 import pages.LoginPage;
+import utils.TestNGListener;
 
-import static utils.RandomUtils.*;
 import java.util.Random;
+
+@Listeners(TestNGListener.class)
 
 public class CreatingContactsTests extends ApplicationManager
 {
@@ -26,17 +28,17 @@ public class CreatingContactsTests extends ApplicationManager
     @BeforeMethod
     public void login()
     {
-        new HomePage(getDriver()).clickBtnLoginHeader();
-        new LoginPage(getDriver()).typeLoginForm(new UserDto("shevt2827@gmail.com", "Password123!"));
-        contactsPage = new ContactsPage(getDriver());
-        addContactPage = new AddContactPage(getDriver());
+        new HomePage(getWebDriver()).clickBtnLoginHeader();
+        new LoginPage(getWebDriver()).typeLoginForm(new UserDto("shevt2827@gmail.com", "Password123!"));
+        contactsPage = new ContactsPage(getWebDriver());
+        addContactPage = new AddContactPage(getWebDriver());
         contactsPage.clickBtnAdd();
     }
 
-    @Test(invocationCount = 1)
+    @Test()
     public void createContactPositiveTest()
     {
-        logger.info("Test: createContactPositiveTest");
+        logger.info("CREATE CONTACT POSITIVE TEST");
         int i = new Random().nextInt(100, 999);
         ContactDtoLombok contact = ContactDtoLombok.builder()
                 .name("Anya_" + i)

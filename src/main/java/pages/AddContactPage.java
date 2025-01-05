@@ -61,7 +61,7 @@ public class AddContactPage extends BasePage
 
     public void clickBtnSave()
     {
-        btnSave.click();
+        clickWait(btnSave,3);
     }
 
     public boolean validateLastElementContactList(ContactDtoLombok contact)

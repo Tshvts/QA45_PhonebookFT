@@ -69,7 +69,7 @@ public class ContactsPage extends BasePage
 
     public void clickBtnAdd()
     {
-        btnAdd.click();
+        clickWait(btnAdd,5);
     }
 
     public void deleteFirstContact()
