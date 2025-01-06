@@ -4,6 +4,7 @@ import data_provider.DPAddContact;
 import dto.ContactDtoLombok;
 import dto.UserDto;
 import manager.ApplicationManager;
+import org.openqa.selenium.TakesScreenshot;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
@@ -16,6 +17,8 @@ import pages.LoginPage;
 import utils.TestNGListener;
 
 import java.util.Random;
+import static utils.PropertiesReader.*;
+import static utils.TakeScreenshot.*;
 
 @Listeners(TestNGListener.class)
 
@@ -29,7 +32,7 @@ public class CreatingContactsTests extends ApplicationManager
     public void login()
     {
         new HomePage(getWebDriver()).clickBtnLoginHeader();
-        new LoginPage(getWebDriver()).typeLoginForm(new UserDto("shevt2827@gmail.com", "Password123!"));
+        new LoginPage(getWebDriver()).typeLoginForm(new UserDto(getProperty("login.properties", "email"), getProperty("login.properties", "password")));
         contactsPage = new ContactsPage(getWebDriver());
         addContactPage = new AddContactPage(getWebDriver());
         contactsPage.clickBtnAdd();
@@ -50,6 +53,7 @@ public class CreatingContactsTests extends ApplicationManager
                 .build();
         addContactPage.typeContactForm(contact);
         addContactPage.clickBtnSave();
+        takeScreenshot((TakesScreenshot) getWebDriver());
         Assert.assertTrue(addContactPage.validateLastElementContactList(contact));
     }
 

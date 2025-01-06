@@ -45,7 +45,6 @@ public class LoginPage extends BasePage
         inputEmail.sendKeys(user.getEmail());
         inputPwd.sendKeys(user.getPassword());
         btnLogin.click();
-        new WebDriverWait(driver,Duration.ofSeconds(5)).until(ExpectedConditions.urlContains("contacts"));
     }
 
     public void typeRegistrationForm(String email, String password)

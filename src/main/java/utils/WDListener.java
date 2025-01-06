@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import static utils.TakeScreenshot.*;
 
 public class WDListener implements WebDriverListener {
     Logger logger = LoggerFactory.getLogger(WDListener.class);
@@ -31,7 +32,7 @@ public class WDListener implements WebDriverListener {
     @Override
     public void afterClick(WebElement element) {
         WebDriverListener.super.afterClick(element);
-        logger.info("Click on element ===> " + element.getTagName());
+        logger.info("Click on element ===> " + element);
     }
 
     @Override
