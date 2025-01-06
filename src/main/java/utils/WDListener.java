@@ -1,53 +1,66 @@
-package utils;
+package utilits;
 
-import org.openqa.selenium.*;
-import org.openqa.selenium.support.events.WebDriverListener;
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.events.AbstractWebDriverEventListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import static utils.TakeScreenshot.*;
-
-public class WDListener implements WebDriverListener {
+public class WDListener extends AbstractWebDriverEventListener
+{
     Logger logger = LoggerFactory.getLogger(WDListener.class);
 
-
-    @Override
-    public void beforeFindElement(WebDriver driver, By locator) {
-        WebDriverListener.super.beforeFindElement(driver, locator);
+    public WDListener() {
+        super();
     }
 
     @Override
-    public void afterFindElement(WebDriver driver, By locator, WebElement result) {
-        WebDriverListener.super.afterFindElement(driver, locator, result);
-        logger.info("Element was found ===> " + result.getTagName());
+    public void beforeFindBy(By by, WebElement element, WebDriver driver) {
+        super.beforeFindBy(by, element, driver);
     }
 
     @Override
-    public void beforeClick(WebElement element) {
-        WebDriverListener.super.beforeClick(element);
+    public void afterFindBy(By by, WebElement element, WebDriver driver) {
+        super.afterFindBy(by, element, driver);
+        logger.info("Find element===> " + element.getTagName() + ", " + by.toString());
     }
 
     @Override
-    public void afterClick(WebElement element) {
-        WebDriverListener.super.afterClick(element);
-        logger.info("Click on element ===> " + element);
+    public void beforeClickOn(WebElement element, WebDriver driver) {
+        super.beforeClickOn(element, driver);
     }
 
     @Override
-    public void onError(Object target, Method method, Object[] args, InvocationTargetException e) {
-        WebDriverListener.super.onError(target, method, args, e);
+    public void afterClickOn(WebElement element, WebDriver driver) {
+        super.afterClickOn(element, driver);
+        logger.info("Click on element===> " + element);
     }
 
     @Override
-    public void beforeGetText(WebElement element) {
-        WebDriverListener.super.beforeGetText(element);
+    public void onException(Throwable throwable, WebDriver driver) {
+        super.onException(throwable, driver);
     }
 
     @Override
-    public void afterGetText(WebElement element, String result) {
-        WebDriverListener.super.afterGetText(element, result);
-        logger.info("After get text ===> " + element.getTagName() + ", Text ===> " + result);
+    public <X> void beforeGetScreenshotAs(OutputType<X> target) {
+        super.beforeGetScreenshotAs(target);
+    }
+
+    @Override
+    public <X> void afterGetScreenshotAs(OutputType<X> target, X screenshot) {
+        super.afterGetScreenshotAs(target, screenshot);
+    }
+
+    @Override
+    public void beforeGetText(WebElement element, WebDriver driver) {
+        super.beforeGetText(element, driver);
+    }
+
+    @Override
+    public void afterGetText(WebElement element, WebDriver driver, String text) {
+        super.afterGetText(element, driver, text);
+        logger.info("After get text ===> " + element.getTagName() + "Text: " + text);
     }
 }

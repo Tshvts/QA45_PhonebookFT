@@ -19,29 +19,29 @@ public class RegistrationTests extends ApplicationManager
     public void RegistrationPositiveTest()
     {
         int i = new Random().nextInt(1000);
-        new HomePage(getWebDriver()).clickBtnLoginHeader();
-        new LoginPage(getWebDriver()).typeRegistrationForm("frosiaH_"+i+"@gmail.com", "Trjjs199!!");
-        Assert.assertTrue(new ContactsPage(getWebDriver()).isSignOutPresent());
+        new HomePage(getDriver()).clickBtnLoginHeader();
+        new LoginPage(getDriver()).typeRegistrationForm("frosiaH_"+i+"@gmail.com", "Trjjs199!!");
+        Assert.assertTrue(new ContactsPage(getDriver()).isSignOutPresent());
     }
 
     @Test
     public void registrationNegativeTest_wrongPassword()
     {
         int i = new Random().nextInt(1000);
-        new HomePage(getWebDriver()).clickBtnLoginHeader();
-        new LoginPage(getWebDriver()).typeRegistrationForm("frosiaH_"+i+"@gmail.com", "Trj!!");
-        new LoginPage(getWebDriver()).closeAlert();
-        Assert.assertTrue(new LoginPage(getWebDriver()).validateErrorMessage("Registration failed with code 400"));
+        new HomePage(getDriver()).clickBtnLoginHeader();
+        new LoginPage(getDriver()).typeRegistrationForm("frosiaH_"+i+"@gmail.com", "Trj!!");
+        new LoginPage(getDriver()).closeAlert();
+        Assert.assertTrue(new LoginPage(getDriver()).validateErrorMessage("Registration failed with code 400"));
     }
 
     @Test
     public void registrationNegativeTest_wrongEmail()
     {
         int i = new Random().nextInt(1000);
-        new HomePage(getWebDriver()).clickBtnLoginHeader();
-        new LoginPage(getWebDriver()).typeRegistrationForm("frosiaH_"+i+"gmailcom", "Password123!");
-        new LoginPage(getWebDriver()).closeAlert();
-        Assert.assertTrue(new LoginPage(getWebDriver()).validateErrorMessage("Registration failed with code 400"));
+        new HomePage(getDriver()).clickBtnLoginHeader();
+        new LoginPage(getDriver()).typeRegistrationForm("frosiaH_"+i+"gmailcom", "Password123!");
+        new LoginPage(getDriver()).closeAlert();
+        Assert.assertTrue(new LoginPage(getDriver()).validateErrorMessage("Registration failed with code 400"));
     }
 
 }

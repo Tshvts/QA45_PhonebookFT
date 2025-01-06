@@ -31,10 +31,10 @@ public class CreatingContactsTests extends ApplicationManager
     @BeforeMethod
     public void login()
     {
-        new HomePage(getWebDriver()).clickBtnLoginHeader();
-        new LoginPage(getWebDriver()).typeLoginForm(new UserDto(getProperty("login.properties", "email"), getProperty("login.properties", "password")));
-        contactsPage = new ContactsPage(getWebDriver());
-        addContactPage = new AddContactPage(getWebDriver());
+        new HomePage(getDriver()).clickBtnLoginHeader();
+        new LoginPage(getDriver()).typeLoginForm(new UserDto(getProperty("login.properties", "email"), getProperty("login.properties", "password")));
+        contactsPage = new ContactsPage(getDriver());
+        addContactPage = new AddContactPage(getDriver());
         contactsPage.clickBtnAdd();
     }
 
@@ -53,7 +53,7 @@ public class CreatingContactsTests extends ApplicationManager
                 .build();
         addContactPage.typeContactForm(contact);
         addContactPage.clickBtnSave();
-        takeScreenshot((TakesScreenshot) getWebDriver());
+        takeScreenshot((TakesScreenshot) getDriver());
         Assert.assertTrue(addContactPage.validateLastElementContactList(contact));
     }
 

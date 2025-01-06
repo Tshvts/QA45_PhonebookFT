@@ -25,26 +25,26 @@ public class LoginTests extends ApplicationManager
         int i = new Random().nextInt(1000);
         email = "tanyshvtsfid_"+i+"@gmail.com";
         password = "Password123!!";
-        new HomePage(getWebDriver()).clickBtnLoginHeader();
-        new LoginPage(getWebDriver()).typeRegistrationForm(email, password);
-        new ContactsPage(getWebDriver()).clickBtnSignOut();
+        new HomePage(getDriver()).clickBtnLoginHeader();
+        new LoginPage(getDriver()).typeRegistrationForm(email, password);
+        new ContactsPage(getDriver()).clickBtnSignOut();
     }
 
     @Test
     public void loginPositiveTest()
     {
         UserDto user = new UserDto(email, password);
-        new LoginPage(getWebDriver()).typeLoginForm(user);
-        Assert.assertTrue(new ContactsPage(getWebDriver()).isSignOutPresent());
+        new LoginPage(getDriver()).typeLoginForm(user);
+        Assert.assertTrue(new ContactsPage(getDriver()).isSignOutPresent());
     }
 
     @Test
     public void loginNegativeTest_emptyEmail()
     {
         UserDto user = new UserDto(" ", password);
-        new LoginPage(getWebDriver()).typeLoginForm(user);
-        new LoginPage(getWebDriver()).closeAlert();
-        Assert.assertTrue(new LoginPage(getWebDriver()).validateErrorMessageLog("Login Failed with code 401"));
+        new LoginPage(getDriver()).typeLoginForm(user);
+        new LoginPage(getDriver()).closeAlert();
+        Assert.assertTrue(new LoginPage(getDriver()).validateErrorMessageLog("Login Failed with code 401"));
     }
 
 }

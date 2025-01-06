@@ -19,9 +19,9 @@ public class DeleteContact extends ApplicationManager
     @BeforeMethod
     public void login()
     {
-        new HomePage(getWebDriver()).clickBtnLoginHeader();
-        new LoginPage(getWebDriver()).typeLoginForm(new UserDto("shevt2827@gmail.com", "Password123!"));
-        contactsPage = new ContactsPage(getWebDriver());
+        new HomePage(getDriver()).clickBtnLoginHeader();
+        new LoginPage(getDriver()).typeLoginForm(new UserDto("shevt2827@gmail.com", "Password123!"));
+        contactsPage = new ContactsPage(getDriver());
     }
 
     @Test
