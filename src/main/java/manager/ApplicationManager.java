@@ -27,10 +27,8 @@ public class ApplicationManager
     @BeforeMethod
     public void setUp(Method method)
     {
-        //logger.info("Start testing-->" + method.getName());
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--lang=en");
-        //driver = new ChromeDriver(options);
         driver = new EventFiringWebDriver(new ChromeDriver());
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);

@@ -1,0 +1,27 @@
+12:22:09.402 [Test worker] INFO  utils.TestNGListener - DATE OF THE START ===> Tue Jan 07 12:22:09 IST 2025
+12:22:11.596 [Test worker] INFO  utilits.WDListener - Find element===> a, By.xpath: //a[text()='LOGIN']
+12:22:11.694 [Test worker] INFO  utilits.WDListener - Click on element===> [[ChromeDriver: chrome on WINDOWS (c7d591415bb2b767f5637ca145d90dab)] -> xpath: //a[text()='LOGIN']]
+12:22:11.725 [Test worker] INFO  utilits.WDListener - Find element===> input, By.xpath: //input[@name='email']
+12:22:11.879 [Test worker] INFO  utilits.WDListener - Find element===> input, By.xpath: //input[@name='password']
+12:22:11.986 [Test worker] INFO  utilits.WDListener - Find element===> button, By.xpath: //button[@name='login']
+12:22:12.049 [Test worker] INFO  utilits.WDListener - Click on element===> [[ChromeDriver: chrome on WINDOWS (c7d591415bb2b767f5637ca145d90dab)] -> xpath: //button[@name='login']]
+12:22:13.244 [Test worker] INFO  utilits.WDListener - Find element===> a, By.xpath: //a[text()='ADD']
+12:22:13.293 [Test worker] INFO  utilits.WDListener - Find element===> a, By.xpath: //a[text()='ADD']
+12:22:13.307 [Test worker] INFO  utilits.WDListener - Find element===> a, By.xpath: //a[text()='ADD']
+12:22:13.351 [Test worker] INFO  utilits.WDListener - Click on element===> [[ChromeDriver: chrome on WINDOWS (c7d591415bb2b767f5637ca145d90dab)] -> xpath: //a[text()='ADD']]
+12:22:13.352 [Test worker] INFO  utils.TestNGListener - METHOD ===> CreatingContactsTests.createContactPositiveTest()[pri:0, instance:tests.CreatingContactsTests@484094a5]
+12:22:13.353 [Test worker] INFO  manager.ApplicationManager - CREATE CONTACT POSITIVE TEST
+12:22:13.373 [Test worker] INFO  utilits.WDListener - Find element===> input, By.xpath: //input[@placeholder='Name']
+12:22:13.450 [Test worker] INFO  utilits.WDListener - Find element===> input, By.xpath: //input[@placeholder='Last Name']
+12:22:13.555 [Test worker] INFO  utilits.WDListener - Find element===> input, By.xpath: //input[@placeholder='Phone']
+12:22:13.640 [Test worker] INFO  utilits.WDListener - Find element===> input, By.xpath: //input[@placeholder='email']
+12:22:13.778 [Test worker] INFO  utilits.WDListener - Find element===> input, By.xpath: //input[@placeholder='Address']
+12:22:13.912 [Test worker] INFO  utilits.WDListener - Find element===> b, By.xpath: //b[text()='Save']
+12:22:13.954 [Test worker] INFO  utilits.WDListener - Find element===> b, By.xpath: //b[text()='Save']
+12:22:13.970 [Test worker] INFO  utilits.WDListener - Find element===> b, By.xpath: //b[text()='Save']
+12:22:14.016 [Test worker] INFO  utilits.WDListener - Click on element===> [[ChromeDriver: chrome on WINDOWS (c7d591415bb2b767f5637ca145d90dab)] -> xpath: //b[text()='Save']]
+12:22:14.869 [Test worker] INFO  utilits.WDListener - Find element===> div, By.xpath: //div[@class='contact-page_leftdiv__yhyke']/div/div[last()]
+12:22:14.881 [Test worker] INFO  utilits.WDListener - After get text ===> divText: Anya_939
+0504448939
+12:22:14.883 [Test worker] INFO  utils.TestNGListener - CreatingContactsTests.createContactPositiveTest()[pri:0, instance:tests.CreatingContactsTests@484094a5] <=== PASS
+12:22:14.884 [Test worker] INFO  utils.TestNGListener - DATE OF THE END ===> Tue Jan 07 12:22:14 IST 2025

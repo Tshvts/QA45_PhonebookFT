@@ -22,7 +22,7 @@ public class BasePage
     public boolean validateUrl(String url, int time)
     {
         try {
-            return new WebDriverWait(driver, Duration.ofSeconds(time))
+            return new WebDriverWait(driver, time)
                     .until(ExpectedConditions.urlContains(url));
         }
         catch (org.openqa.selenium.TimeoutException e)
@@ -36,7 +36,7 @@ public class BasePage
 
     public void clickWait(WebElement element, int time)
     {
-        new WebDriverWait(driver, Duration.ofSeconds(time)).until(ExpectedConditions.elementToBeClickable(element)).click();
+        new WebDriverWait(driver, time).until(ExpectedConditions.elementToBeClickable(element)).click();
     }
 
     public void pause(int time)

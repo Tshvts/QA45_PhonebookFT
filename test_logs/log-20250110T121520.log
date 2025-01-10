@@ -1,0 +1,19 @@
+12:15:20.493 [Test worker] INFO  utils.TestNGListener - DATE OF THE START ===> Fri Jan 10 12:15:20 IST 2025
+12:15:22.450 [Test worker] INFO  utilits.WDListener - Find element===> a, By.xpath: //a[text()='LOGIN']
+12:15:22.556 [Test worker] INFO  utilits.WDListener - Click on element===> [[ChromeDriver: chrome on WINDOWS (3645804a7695198ecb591d7f385cfcd4)] -> xpath: //a[text()='LOGIN']]
+12:15:22.580 [Test worker] INFO  utilits.WDListener - Find element===> input, By.xpath: //input[@name='email']
+12:15:22.711 [Test worker] INFO  utilits.WDListener - Find element===> input, By.xpath: //input[@name='password']
+12:15:22.804 [Test worker] INFO  utilits.WDListener - Find element===> button, By.xpath: //button[text()='Registration']
+12:15:22.843 [Test worker] INFO  utilits.WDListener - Click on element===> [[ChromeDriver: chrome on WINDOWS (3645804a7695198ecb591d7f385cfcd4)] -> xpath: //button[text()='Registration']]
+12:15:24.518 [Test worker] INFO  utilits.WDListener - Find element===> button, By.xpath: //button[text()='Sign Out']
+12:15:24.569 [Test worker] INFO  utilits.WDListener - Find element===> button, By.xpath: //button[text()='Sign Out']
+12:15:24.580 [Test worker] INFO  utilits.WDListener - Find element===> button, By.xpath: //button[text()='Sign Out']
+12:15:24.636 [Test worker] INFO  utilits.WDListener - Click on element===> [[ChromeDriver: chrome on WINDOWS (3645804a7695198ecb591d7f385cfcd4)] -> xpath: //button[text()='Sign Out']]
+12:15:24.638 [Test worker] INFO  utils.TestNGListener - METHOD ===> LoginTests.loginPositiveTest()[pri:0, instance:tests.LoginTests@41e68d87]
+12:15:24.656 [Test worker] INFO  utilits.WDListener - Find element===> input, By.xpath: //input[@name='email']
+12:15:24.759 [Test worker] INFO  utilits.WDListener - Find element===> input, By.xpath: //input[@name='password']
+12:15:24.824 [Test worker] INFO  utilits.WDListener - Find element===> button, By.xpath: //button[@name='login']
+12:15:24.861 [Test worker] INFO  utilits.WDListener - Click on element===> [[ChromeDriver: chrome on WINDOWS (3645804a7695198ecb591d7f385cfcd4)] -> xpath: //button[@name='login']]
+12:15:25.403 [Test worker] INFO  utilits.WDListener - Find element===> button, By.xpath: //button[text()='Sign Out']
+12:15:25.419 [Test worker] INFO  utils.TestNGListener - LoginTests.loginPositiveTest()[pri:0, instance:tests.LoginTests@41e68d87] <=== PASS
+12:15:25.419 [Test worker] INFO  utils.TestNGListener - DATE OF THE END ===> Fri Jan 10 12:15:25 IST 2025

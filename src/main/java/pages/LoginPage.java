@@ -57,7 +57,7 @@ public class LoginPage extends BasePage
 
     public void closeAlert()
     {
-        Alert alert = new WebDriverWait(driver, Duration.ofSeconds(5))
+        Alert alert = new WebDriverWait(driver, 5)
                 .until(ExpectedConditions.alertIsPresent());
         alert.accept();
     }

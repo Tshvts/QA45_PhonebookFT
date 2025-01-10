@@ -81,7 +81,7 @@ public class ContactsPage extends BasePage
 
     public int quantityContacts()
     {
-        return new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@class='contact-item_card__2SOIM']"))).size();
+        return new WebDriverWait(driver, 5).until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@class='contact-item_card__2SOIM']"))).size();
     }
 
     //HOMEWORK 11
@@ -116,7 +116,7 @@ public class ContactsPage extends BasePage
     public boolean validateContactCard(ContactDtoLombok contact)
     {
          System.out.println("old contact:" + contactCard.getText());
-         new WebDriverWait(driver,Duration.ofSeconds(5)).until(ExpectedConditions.textToBePresentInElement(contactCard,contact.getName()));
+         new WebDriverWait(driver, 5).until(ExpectedConditions.textToBePresentInElement(contactCard,contact.getName()));
          System.out.println("new contact:" + contactCard.getText());
          String cardContactText = contactCard.getText();
          return (cardContactText.contains(contact.getName())

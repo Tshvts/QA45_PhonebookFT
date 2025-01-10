@@ -32,7 +32,10 @@ public class CreatingContactsTests extends ApplicationManager
     public void login()
     {
         new HomePage(getDriver()).clickBtnLoginHeader();
-        new LoginPage(getDriver()).typeLoginForm(new UserDto(getProperty("login.properties", "email"), getProperty("login.properties", "password")));
+        new LoginPage(getDriver()).typeLoginForm
+                (new UserDto(
+                        getProperty("login.properties", "email"),
+                        getProperty("login.properties", "password")));
         contactsPage = new ContactsPage(getDriver());
         addContactPage = new AddContactPage(getDriver());
         contactsPage.clickBtnAdd();
