@@ -19,7 +19,7 @@ public class DeleteContactByIDTests implements BaseApi {
     ContactDtoLombok contactDtoLombok;
     ContactsDto contactsDto;
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true)
     public void login() {
         userDtoLombok = UserDtoLombok.builder()
                 .username("o3hfpb1dov@gmail.com")

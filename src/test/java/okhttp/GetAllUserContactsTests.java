@@ -23,7 +23,7 @@ public class GetAllUserContactsTests implements BaseApi
     ContactDtoLombok contactDtoLombok;
     ContactsDto contactsDto;
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true)
     public void login()
     {
         userDtoLombok = UserDtoLombok.builder()
@@ -58,7 +58,7 @@ public class GetAllUserContactsTests implements BaseApi
         }
     }
 
-    @Test
+    @Test(groups = "smoke")
     public void getAllUserContactsPositiveTest()
     {
         Request request = new Request.Builder()

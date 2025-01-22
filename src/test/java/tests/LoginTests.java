@@ -19,7 +19,7 @@ public class LoginTests extends ApplicationManager
 {
     private String email, password;
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void Registration()
     {
         int i = new Random().nextInt(1000);

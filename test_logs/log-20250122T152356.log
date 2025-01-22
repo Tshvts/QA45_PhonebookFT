@@ -1,0 +1,4 @@
+15:23:56.374 [Test worker] INFO  utils.TestNGListener - DATE OF THE START ===> Wed Jan 22 15:23:56 IST 2025
+15:23:56.506 [Test worker] INFO  utils.TestNGListener - METHOD ===> CreatingContactsTests.createContactPositiveTest()[pri:0, instance:tests.CreatingContactsTests@7a1234bf]
+15:23:56.507 [Test worker] INFO  utils.TestNGListener - CreatingContactsTests.createContactPositiveTest()[pri:0, instance:tests.CreatingContactsTests@7a1234bf] <=== IGNORE
+15:23:56.507 [Test worker] INFO  utils.TestNGListener - DATE OF THE END ===> Wed Jan 22 15:23:56 IST 2025

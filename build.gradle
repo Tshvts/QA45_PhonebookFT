@@ -30,3 +30,32 @@ dependencies {
 test {
     useTestNG()
 }
+
+task smoketests(type: Test)
+{
+    useTestNG()
+            {
+                suites 'src/test/resources/properties/smoketests.xml'
+            }
+}
+
+task regresstests(type: Test)
+{
+    useTestNG()
+            {
+                suites 'src/test/resources/properties/regresstests.xml'
+            }
+}
+
+task smoketestsbrowser(type: Test)
+{
+    useTestNG()
+            {
+                suites 'src/test/resources/properties/smoketests.xml'
+            }
+
+    if(project.hasProperty('browser'))
+    {
+        systemProperty 'browser', "${browser}"
+    }
+}

@@ -28,7 +28,7 @@ public class CreatingContactsTests extends ApplicationManager
     ContactsPage contactsPage;
     AddContactPage addContactPage;
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void login()
     {
         new HomePage(getDriver()).clickBtnLoginHeader();
@@ -41,7 +41,7 @@ public class CreatingContactsTests extends ApplicationManager
         contactsPage.clickBtnAdd();
     }
 
-    @Test()
+    @Test(groups = "smoke")
     public void createContactPositiveTest()
     {
         logger.info("CREATE CONTACT POSITIVE TEST");
@@ -61,7 +61,7 @@ public class CreatingContactsTests extends ApplicationManager
     }
 
     //Homework 10
-    @Test
+    @Test(groups = "regresstests")
     public void createContactNegativeTest_emptyName()
     {
         int i = new Random().nextInt(100, 999);

@@ -1,0 +1,27 @@
+15:30:43.517 [Test worker] INFO  utils.TestNGListener - DATE OF THE START ===> Wed Jan 22 15:30:43 IST 2025
+15:30:49.517 [Test worker] INFO  utilits.WDListener - Find element===> [[FirefoxDriver: firefox on WINDOWS (24c1e9d5-a854-4325-be9f-40fd813f547e)] -> xpath: //a[text()='LOGIN']], By.xpath: //a[text()='LOGIN']
+15:30:49.817 [Test worker] INFO  utilits.WDListener - Click on element===> [[FirefoxDriver: firefox on WINDOWS (24c1e9d5-a854-4325-be9f-40fd813f547e)] -> xpath: //a[text()='LOGIN']]
+15:30:49.817 [Test worker] INFO  utilits.WDListener - Find element===> [[FirefoxDriver: firefox on WINDOWS (24c1e9d5-a854-4325-be9f-40fd813f547e)] -> xpath: //input[@name='email']], By.xpath: //input[@name='email']
+15:30:49.884 [Test worker] INFO  utilits.WDListener - Find element===> [[FirefoxDriver: firefox on WINDOWS (24c1e9d5-a854-4325-be9f-40fd813f547e)] -> xpath: //input[@name='password']], By.xpath: //input[@name='password']
+15:30:49.938 [Test worker] INFO  utilits.WDListener - Find element===> [[FirefoxDriver: firefox on WINDOWS (24c1e9d5-a854-4325-be9f-40fd813f547e)] -> xpath: //button[@name='login']], By.xpath: //button[@name='login']
+15:30:50.151 [Test worker] INFO  utilits.WDListener - Click on element===> [[FirefoxDriver: firefox on WINDOWS (24c1e9d5-a854-4325-be9f-40fd813f547e)] -> xpath: //button[@name='login']]
+15:30:50.975 [Test worker] INFO  utilits.WDListener - Find element===> [[FirefoxDriver: firefox on WINDOWS (24c1e9d5-a854-4325-be9f-40fd813f547e)] -> xpath: //a[text()='ADD']], By.xpath: //a[text()='ADD']
+15:30:51.039 [Test worker] INFO  utilits.WDListener - Find element===> [[FirefoxDriver: firefox on WINDOWS (24c1e9d5-a854-4325-be9f-40fd813f547e)] -> xpath: //a[text()='ADD']], By.xpath: //a[text()='ADD']
+15:30:51.051 [Test worker] INFO  utilits.WDListener - Find element===> [[FirefoxDriver: firefox on WINDOWS (24c1e9d5-a854-4325-be9f-40fd813f547e)] -> xpath: //a[text()='ADD']], By.xpath: //a[text()='ADD']
+15:30:51.284 [Test worker] INFO  utilits.WDListener - Click on element===> [[FirefoxDriver: firefox on WINDOWS (24c1e9d5-a854-4325-be9f-40fd813f547e)] -> xpath: //a[text()='ADD']]
+15:30:51.284 [Test worker] INFO  utils.TestNGListener - METHOD ===> CreatingContactsTests.createContactPositiveTest()[pri:0, instance:tests.CreatingContactsTests@7a1234bf]
+15:30:51.284 [Test worker] INFO  manager.ApplicationManager - CREATE CONTACT POSITIVE TEST
+15:30:51.301 [Test worker] INFO  utilits.WDListener - Find element===> [[FirefoxDriver: firefox on WINDOWS (24c1e9d5-a854-4325-be9f-40fd813f547e)] -> xpath: //input[@placeholder='Name']], By.xpath: //input[@placeholder='Name']
+15:30:51.342 [Test worker] INFO  utilits.WDListener - Find element===> [[FirefoxDriver: firefox on WINDOWS (24c1e9d5-a854-4325-be9f-40fd813f547e)] -> xpath: //input[@placeholder='Last Name']], By.xpath: //input[@placeholder='Last Name']
+15:30:51.378 [Test worker] INFO  utilits.WDListener - Find element===> [[FirefoxDriver: firefox on WINDOWS (24c1e9d5-a854-4325-be9f-40fd813f547e)] -> xpath: //input[@placeholder='Phone']], By.xpath: //input[@placeholder='Phone']
+15:30:51.417 [Test worker] INFO  utilits.WDListener - Find element===> [[FirefoxDriver: firefox on WINDOWS (24c1e9d5-a854-4325-be9f-40fd813f547e)] -> xpath: //input[@placeholder='email']], By.xpath: //input[@placeholder='email']
+15:30:51.476 [Test worker] INFO  utilits.WDListener - Find element===> [[FirefoxDriver: firefox on WINDOWS (24c1e9d5-a854-4325-be9f-40fd813f547e)] -> xpath: //input[@placeholder='Address']], By.xpath: //input[@placeholder='Address']
+15:30:51.518 [Test worker] INFO  utilits.WDListener - Find element===> [[FirefoxDriver: firefox on WINDOWS (24c1e9d5-a854-4325-be9f-40fd813f547e)] -> xpath: //b[text()='Save']], By.xpath: //b[text()='Save']
+15:30:51.543 [Test worker] INFO  utilits.WDListener - Find element===> [[FirefoxDriver: firefox on WINDOWS (24c1e9d5-a854-4325-be9f-40fd813f547e)] -> xpath: //b[text()='Save']], By.xpath: //b[text()='Save']
+15:30:51.551 [Test worker] INFO  utilits.WDListener - Find element===> [[FirefoxDriver: firefox on WINDOWS (24c1e9d5-a854-4325-be9f-40fd813f547e)] -> xpath: //b[text()='Save']], By.xpath: //b[text()='Save']
+15:30:51.784 [Test worker] INFO  utilits.WDListener - Click on element===> [[FirefoxDriver: firefox on WINDOWS (24c1e9d5-a854-4325-be9f-40fd813f547e)] -> xpath: //b[text()='Save']]
+15:30:52.306 [Test worker] INFO  utilits.WDListener - Find element===> [[FirefoxDriver: firefox on WINDOWS (24c1e9d5-a854-4325-be9f-40fd813f547e)] -> xpath: //div[@class='contact-page_leftdiv__yhyke']/div/div[last()]], By.xpath: //div[@class='contact-page_leftdiv__yhyke']/div/div[last()]
+15:30:52.317 [Test worker] INFO  utilits.WDListener - After get text ===> [[FirefoxDriver: firefox on WINDOWS (24c1e9d5-a854-4325-be9f-40fd813f547e)] -> xpath: //div[@class='contact-page_leftdiv__yhyke']/div/div[last()]]Text: Anya_677
+0504448677
+15:30:52.318 [Test worker] INFO  utils.TestNGListener - CreatingContactsTests.createContactPositiveTest()[pri:0, instance:tests.CreatingContactsTests@7a1234bf] <=== PASS
+15:30:53.386 [Test worker] INFO  utils.TestNGListener - DATE OF THE END ===> Wed Jan 22 15:30:53 IST 2025

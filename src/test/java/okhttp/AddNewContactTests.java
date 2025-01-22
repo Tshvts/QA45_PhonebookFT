@@ -21,7 +21,7 @@ public class AddNewContactTests implements BaseApi
     SoftAssert softAssert = new SoftAssert();
     TokenDto tokenDto;
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true)
     public void login()
     {
         userDtoLombok = UserDtoLombok.builder()
@@ -56,7 +56,7 @@ public class AddNewContactTests implements BaseApi
         }
     }
 
-    @Test(invocationCount = 3)
+    @Test(invocationCount = 3, groups = "smoke")
     public void addNewContactPositiveTest()
     {
         ContactDtoLombok contactDtoLombok = ContactDtoLombok.builder()

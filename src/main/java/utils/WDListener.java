@@ -24,7 +24,7 @@ public class WDListener extends AbstractWebDriverEventListener
     @Override
     public void afterFindBy(By by, WebElement element, WebDriver driver) {
         super.afterFindBy(by, element, driver);
-        logger.info("Find element===> " + element.getTagName() + ", " + by.toString());
+        logger.info("Find element===> " + element + ", " + by.toString());
     }
 
     @Override
@@ -61,6 +61,6 @@ public class WDListener extends AbstractWebDriverEventListener
     @Override
     public void afterGetText(WebElement element, WebDriver driver, String text) {
         super.afterGetText(element, driver, text);
-        logger.info("After get text ===> " + element.getTagName() + "Text: " + text);
+        logger.info("After get text ===> " + element + "Text: " + text);
     }
 }

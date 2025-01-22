@@ -1,0 +1,23 @@
+13:54:00.260 [Test worker] INFO  utils.TestNGListener - DATE OF THE START ===> Wed Jan 22 13:54:00 IST 2025
+13:54:01.957 [Test worker] INFO  utilits.WDListener - Find element===> [[ChromeDriver: chrome on WINDOWS (93877e82ab48384a8ddfe6ac707ad59f)] -> xpath: //a[text()='LOGIN']], By.xpath: //a[text()='LOGIN']
+13:54:02.019 [Test worker] INFO  utilits.WDListener - Click on element===> [[ChromeDriver: chrome on WINDOWS (93877e82ab48384a8ddfe6ac707ad59f)] -> xpath: //a[text()='LOGIN']]
+13:54:02.037 [Test worker] INFO  utilits.WDListener - Find element===> [[ChromeDriver: chrome on WINDOWS (93877e82ab48384a8ddfe6ac707ad59f)] -> xpath: //input[@name='email']], By.xpath: //input[@name='email']
+13:54:02.126 [Test worker] INFO  utilits.WDListener - Find element===> [[ChromeDriver: chrome on WINDOWS (93877e82ab48384a8ddfe6ac707ad59f)] -> xpath: //input[@name='password']], By.xpath: //input[@name='password']
+13:54:02.182 [Test worker] INFO  utilits.WDListener - Find element===> [[ChromeDriver: chrome on WINDOWS (93877e82ab48384a8ddfe6ac707ad59f)] -> xpath: //button[@name='login']], By.xpath: //button[@name='login']
+13:54:02.230 [Test worker] INFO  utilits.WDListener - Click on element===> [[ChromeDriver: chrome on WINDOWS (93877e82ab48384a8ddfe6ac707ad59f)] -> xpath: //button[@name='login']]
+13:54:02.232 [Test worker] INFO  utils.TestNGListener - METHOD ===> DeleteContact.deleteContactPositiveTest()[pri:0, instance:tests.DeleteContact@6436a7db]
+13:54:02.249 [Test worker] INFO  utilits.WDListener - Find element===> null, By.xpath: //div[@class='contact-item_card__2SOIM']
+13:54:02.763 [Test worker] INFO  utilits.WDListener - Find element===> null, By.xpath: //div[@class='contact-item_card__2SOIM']
+13:54:03.290 [Test worker] INFO  utilits.WDListener - Find element===> null, By.xpath: //div[@class='contact-item_card__2SOIM']
+13:54:03.804 [Test worker] INFO  utilits.WDListener - Find element===> null, By.xpath: //div[@class='contact-item_card__2SOIM']
+13:54:03.833 [Test worker] INFO  utilits.WDListener - Find element===> [[ChromeDriver: chrome on WINDOWS (93877e82ab48384a8ddfe6ac707ad59f)] -> xpath: //div[@class='contact-item_card__2SOIM']], By.xpath: //div[@class='contact-item_card__2SOIM']
+13:54:03.870 [Test worker] INFO  utilits.WDListener - Find element===> [[ChromeDriver: chrome on WINDOWS (93877e82ab48384a8ddfe6ac707ad59f)] -> xpath: //div[@class='contact-item_card__2SOIM']], By.xpath: //div[@class='contact-item_card__2SOIM']
+13:54:03.898 [Test worker] INFO  utilits.WDListener - Find element===> [[ChromeDriver: chrome on WINDOWS (93877e82ab48384a8ddfe6ac707ad59f)] -> xpath: //div[@class='contact-item_card__2SOIM']], By.xpath: //div[@class='contact-item_card__2SOIM']
+13:54:03.964 [Test worker] INFO  utilits.WDListener - Click on element===> [[ChromeDriver: chrome on WINDOWS (93877e82ab48384a8ddfe6ac707ad59f)] -> xpath: //div[@class='contact-item_card__2SOIM']]
+13:54:03.980 [Test worker] INFO  utilits.WDListener - Find element===> [[ChromeDriver: chrome on WINDOWS (93877e82ab48384a8ddfe6ac707ad59f)] -> xpath: //button[text()='Remove']], By.xpath: //button[text()='Remove']
+13:54:04.004 [Test worker] INFO  utilits.WDListener - Find element===> [[ChromeDriver: chrome on WINDOWS (93877e82ab48384a8ddfe6ac707ad59f)] -> xpath: //button[text()='Remove']], By.xpath: //button[text()='Remove']
+13:54:04.023 [Test worker] INFO  utilits.WDListener - Find element===> [[ChromeDriver: chrome on WINDOWS (93877e82ab48384a8ddfe6ac707ad59f)] -> xpath: //button[text()='Remove']], By.xpath: //button[text()='Remove']
+13:54:04.067 [Test worker] INFO  utilits.WDListener - Click on element===> [[ChromeDriver: chrome on WINDOWS (93877e82ab48384a8ddfe6ac707ad59f)] -> xpath: //button[text()='Remove']]
+13:54:07.091 [Test worker] INFO  utilits.WDListener - Find element===> null, By.xpath: //div[@class='contact-item_card__2SOIM']
+13:54:07.098 [Test worker] INFO  utils.TestNGListener - DeleteContact.deleteContactPositiveTest()[pri:0, instance:tests.DeleteContact@6436a7db] <=== PASS
+13:54:07.272 [Test worker] INFO  utils.TestNGListener - DATE OF THE END ===> Wed Jan 22 13:54:07 IST 2025

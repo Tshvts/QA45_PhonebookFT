@@ -22,7 +22,7 @@ public class LoginTestsOkHttp implements BaseApi
     String password;
     TokenDto tokenDto;
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true)
     public void registration()
     {
         email = generateEmail(10);

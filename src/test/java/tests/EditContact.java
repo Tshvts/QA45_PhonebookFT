@@ -22,7 +22,7 @@ public class EditContact extends ApplicationManager
     ContactsPage contactsPage;
     SoftAssert softAssert = new SoftAssert();
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void login()
     {
         new HomePage(getDriver()).clickBtnLoginHeader();
